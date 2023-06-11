@@ -1,0 +1,8 @@
+<ng-container *ngIf="!selectedRoom">
+    <form class="form-group row" (ngSubmit)="sendMessage()" #sendMessageForm="ngForm">
+      <input required class="form-control col-8" [(ngModel)]="chatMessage" name="chatMessage" autocomplete="off" />
+      <button [disabled]="!sendMessageForm.valid" class="btn btn-secondary col-4" type="submit">Send</button>
+    </form>
+
+      <app-chat-stream [messages]="roomMessages"></app-chat-stream>
+</ng-container>
